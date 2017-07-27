@@ -1,0 +1,7 @@
+com\durovich\restaurant_admin\dal\CrudDao.class
+com\durovich\restaurant_admin\controllers\AddProductController.class
+com\durovich\restaurant_admin\dal\CrudDaoBean.class
+com\durovich\restaurant_admin\controllers\MainController.class
+com\durovich\restaurant_admin\config\FXMLLoaderProvider.class
+com\durovich\restaurant_admin\config\DBconfig.class
+com\durovich\restaurant_admin\config\Main.class
