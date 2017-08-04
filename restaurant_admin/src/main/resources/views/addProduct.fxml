@@ -8,15 +8,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.durovich.restaurant_admin.controllers.AddProductController">
    <children>
       <TextField fx:id="nameField" layoutX="135.0" layoutY="114.0" prefHeight="25.0" prefWidth="185.0" />
-      <Label alignment="CENTER" layoutX="135.0" layoutY="85.0" prefHeight="17.0" prefWidth="185.0" text="Name" textAlignment="CENTER" />
+      <Label alignment="CENTER" layoutX="135.0" layoutY="85.0" prefHeight="17.0" prefWidth="185.0" text="Product name" textAlignment="CENTER" />
       <TextField fx:id="priceField" layoutX="328.0" layoutY="114.0" prefHeight="25.0" prefWidth="52.0" />
       <Label alignment="CENTER" layoutX="313.0" layoutY="85.0" prefHeight="17.0" prefWidth="82.0" text="Price $" textAlignment="CENTER" />
       <Button fx:id="addBTN" layoutX="523.0" layoutY="83.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="63.0" prefWidth="52.0" text="Add" />
-      <TableView fx:id="productTable" layoutX="159.0" layoutY="167.0" prefHeight="200.0" prefWidth="322.0">
+      <TableView fx:id="productTable" layoutX="159.0" layoutY="215.0" prefHeight="200.0" prefWidth="322.0">
         <columns>
           <TableColumn fx:id="nameColumn" prefWidth="142.0" text="Name" />
           <TableColumn fx:id="costColumn" minWidth="0.0" prefWidth="91.0" text="Price$" />
@@ -24,8 +23,10 @@
         </columns>
       </TableView>
       <Button fx:id="deleteBTN" disable="true" layoutX="505.0" layoutY="240.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="50.0" prefWidth="52.0" text="Delete" />
-      <Label fx:id="errorMessagesLBL" alignment="CENTER" layoutX="135.0" layoutY="138.0" prefHeight="31.0" prefWidth="369.0" />
+      <Label fx:id="errorMessagesLBL" alignment="CENTER" layoutX="144.0" layoutY="171.0" prefHeight="31.0" prefWidth="369.0" />
       <ComboBox fx:id="productTypeField" layoutX="395.0" layoutY="114.0" prefHeight="25.0" prefWidth="89.0" />
-      <Label alignment="CENTER" layoutX="399.0" layoutY="85.0" prefHeight="17.0" prefWidth="82.0" text="Type" textAlignment="CENTER" />
+      <Label alignment="CENTER" layoutX="399.0" layoutY="85.0" prefHeight="17.0" prefWidth="82.0" text="Product type" textAlignment="CENTER" />
+      <Label layoutX="159.0" layoutY="140.0" prefHeight="31.0" prefWidth="143.0" text="Enter search string" />
+      <TextField fx:id="searchField" layoutX="262.0" layoutY="141.0" prefHeight="25.0" prefWidth="185.0" />
    </children>
 </AnchorPane>

@@ -31,7 +31,11 @@ public class ProductService {
 		productDao.delete(Product.class, p.getId());
 	}
 	@Transactional
-	public void addOrder(Order o){
-		productDao.merge(o);
+	public Order addOrder(Order o){
+		return productDao.merge(o);
+	}
+	@Transactional
+	public void del(long id){
+		 productDao.delete(Order.class, id);
 	}
 }
