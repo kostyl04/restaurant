@@ -1,10 +1,25 @@
 package com.durovich.restaurant_admin.controllers;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
+
+import javax.print.Doc;
+import javax.print.DocFlavor;
+import javax.print.DocPrintJob;
+import javax.print.PrintException;
+import javax.print.PrintService;
+import javax.print.PrintServiceLookup;
+import javax.print.SimpleDoc;
+import javax.print.attribute.HashPrintRequestAttributeSet;
+import javax.print.attribute.PrintRequestAttributeSet;
+import javax.print.attribute.standard.Copies;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,6 +39,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -39,7 +55,8 @@ public class MakeOrderController implements Initializable {
 	@Autowired
 	private CurrencyService currencyService;
 	private List<Product> products;
-
+	@FXML
+	private Button printBtn;
 	private ObservableList<OrderPosition> positions;
 	@FXML
 	private TableView<OrderPosition> positionsTable;
@@ -106,7 +123,28 @@ public class MakeOrderController implements Initializable {
 		});
 		paymentTypePicker.setItems(FXCollections.observableArrayList(PaymentType.values()));
 		paymentTypePicker.getSelectionModel().select(0);//
-		
+		totalAmount.textProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> ov, String t, String t1) {
+				double d = Double.valueOf(totalAmount.getText());
+				try {
+					convertedPrice.setText(
+							String.valueOf(d * exchangePicker.getSelectionModel().getSelectedItem().getRate()));
+				} catch (Exception e) {
+					convertedPrice.setText("0");
+				}
+			}
+		});
+		billArea.textProperty().addListener(new ChangeListener<String>() {
+
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				if (newValue.isEmpty())
+					printBtn.setDisable(true);
+				else
+					printBtn.setDisable(false);
+			}
+		});
 
 	}
 
@@ -165,15 +203,40 @@ public class MakeOrderController implements Initializable {
 		o.setTotalAmount(Double.valueOf(totalAmount.getText()));
 		o.setPaymentType(paymentTypePicker.getSelectionModel().getSelectedItem().toString());
 		o.setTableNumber(Integer.valueOf(tableNumberField.getText()));
-		long id=productService.addOrder(o).getId();
+		long id = productService.addOrder(o).getId();
 		o.setId(id);
 		billArea.setText(o.getBill());
 	}
+
 	@FXML
-	private void reset(){
+	private void reset() {
 		System.out.println("asd");
 		positions.removeAll(positions);
+		foodPicker.getSelectionModel().select(0);
+		drinksPicker.getSelectionModel().select(0);
+		barPicker.getSelectionModel().select(0);
+		barCount.setText("");
+		foodCount.setText("");
+		drinksCount.setText("");
+		tableNumberField.setText("1");
+		paymentTypePicker.getSelectionModel().select(0);
+		totalAmount.setText("0");
 		billArea.clear();
+	}
+
+	@FXML
+	private void print() throws PrintException, IOException {
+		PrintService service = PrintServiceLookup.lookupDefaultPrintService();
+
+		// prints the famous hello world! plus a form feed
+		try (InputStream is = new ByteArrayInputStream(billArea.getText().getBytes("utf-8"));) {
+			PrintRequestAttributeSet pras = new HashPrintRequestAttributeSet();
+			pras.add(new Copies(1));
+			Doc doc = new SimpleDoc(is, DocFlavor.INPUT_STREAM.AUTOSENSE, null);
+			DocPrintJob job = service.createPrintJob();
+			job.print(doc, pras);
+		}
+
 	}
 
 }

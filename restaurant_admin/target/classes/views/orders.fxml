@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.durovich.restaurant_admin.controllers.OrdersController">
+   <children>
+      <TableView fx:id="orderTable" layoutX="14.0" layoutY="39.0" prefHeight="395.0" prefWidth="459.0">
+        <columns>
+          <TableColumn fx:id="orderNumberColumn" prefWidth="61.0" text="Order №" />
+          <TableColumn fx:id="tableNumberColumn" minWidth="0.0" prefWidth="150.0" text="Table №" />
+            <TableColumn fx:id="timeColumn" minWidth="0.0" prefWidth="125.0" text="Time" />
+            <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="122.0" text="Status" />
+        </columns>
+      </TableView>
+      <Button fx:id="updateBTN" disable="true" layoutX="493.0" layoutY="205.0" mnemonicParsing="false" onAction="#updateStatus" prefHeight="50.0" prefWidth="102.0" text="UpdateStatus" />
+      <ComboBox fx:id="statusBox" layoutX="476.0" layoutY="160.0" prefHeight="38.0" prefWidth="150.0" />
+      <Label layoutX="489.0" layoutY="136.0" prefHeight="17.0" prefWidth="125.0" text="Select status:" />
+      <Label layoutX="489.0" layoutY="39.0" prefHeight="38.0" prefWidth="140.0" text="Show orders with status:" />
+      <ComboBox fx:id="filterBox" layoutX="476.0" layoutY="83.0" prefHeight="38.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

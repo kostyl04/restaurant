@@ -6,37 +6,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.durovich.restaurant_admin.controllers.CalculatorController">
+<AnchorPane prefHeight="300.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.durovich.restaurant_admin.controllers.CalculatorController">
    <children>
-      <TextField fx:id="result" layoutX="291.0" layoutY="56.0" prefHeight="50.0" prefWidth="125.0" />
-      <Button layoutX="183.0" layoutY="181.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="1" />
-      <Button layoutX="242.0" layoutY="181.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="2" />
-      <Button layoutX="300.0" layoutY="181.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="3" />
-      <Button layoutX="183.0" layoutY="244.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="4" />
-      <Button layoutX="242.0" layoutY="244.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="5" />
-      <Button layoutX="300.0" layoutY="244.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="6" />
-      <Button layoutX="183.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="7" />
-      <Button layoutX="242.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="8" />
-      <Button layoutX="300.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="9" />
-      <Button layoutX="183.0" layoutY="364.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="0" />
-      <Button layoutX="242.0" layoutY="364.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="." />
-      <Button layoutX="300.0" layoutY="364.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="118.0" text="=">
+      <TextField fx:id="result" layoutX="101.0" layoutY="14.0" prefHeight="50.0" prefWidth="97.0" />
+      <Button layoutX="7.0" layoutY="132.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="1" />
+      <Button layoutX="55.0" layoutY="132.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="2" />
+      <Button layoutX="104.0" layoutY="132.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="3" />
+      <Button layoutX="7.0" layoutY="183.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="4" />
+      <Button layoutX="55.0" layoutY="183.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="5" />
+      <Button layoutX="104.0" layoutY="183.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="6" />
+      <Button layoutX="7.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="7" />
+      <Button layoutX="55.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="8" />
+      <Button layoutX="104.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="9" />
+      <Button layoutX="7.0" layoutY="277.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="0" />
+      <Button layoutX="55.0" layoutY="277.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="." />
+      <Button layoutX="104.0" layoutY="275.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="90.0" text="=">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="368.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="+" />
-      <Button layoutX="368.0" layoutY="181.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="-" />
-      <Button layoutX="368.0" layoutY="244.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="x" />
-      <Button layoutX="368.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="/" />
-      <Button layoutX="183.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="&lt;-" />
-      <Button layoutX="242.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="C" />
-      <Button layoutX="300.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="50.0" prefWidth="50.0" text="+/-" />
-      <Label fx:id="operation" alignment="CENTER" contentDisplay="CENTER" layoutX="242.0" layoutY="60.0" prefHeight="43.0" prefWidth="50.0" text="+">
+      <Button layoutX="158.0" layoutY="72.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="+" />
+      <Button layoutX="158.0" layoutY="132.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="-" />
+      <Button layoutX="158.0" layoutY="183.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="x" />
+      <Button layoutX="158.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="/" />
+      <Button layoutX="7.0" layoutY="72.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="&lt;-" />
+      <Button layoutX="55.0" layoutY="72.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="C" />
+      <Button layoutX="104.0" layoutY="72.0" mnemonicParsing="false" onAction="#handleInput" prefHeight="40.0" prefWidth="40.0" text="+/-" />
+      <Label fx:id="operation" alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="11.0" prefHeight="43.0" prefWidth="50.0" text="+">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="value" alignment="CENTER" contentDisplay="CENTER" layoutX="183.0" layoutY="60.0" prefHeight="43.0" prefWidth="76.0" text="0" />
+      <Label fx:id="value" alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="11.0" prefHeight="43.0" prefWidth="76.0" text="0" />
    </children>
 </AnchorPane>

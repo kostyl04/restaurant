@@ -23,6 +23,7 @@ public class MainController {
 	private final static String CALCULATOR_VIEW_NAME = "/calculator.fxml";
 	private final static String MAKE_ORDER_VIEW_NAME = "/makeOrder.fxml";
 	private final static String MAIN_VIEW_NAME = "/main.fxml";
+	private final static String ORDERS_VIEW_NAME = "/orders.fxml";
 	@FXML
 	private MenuBar menu;
 	@FXML
@@ -94,6 +95,12 @@ public class MainController {
 		menu.setDisable(true);
 		rootLayout.setCenter(loginPane);
 
+	}
+	@FXML
+	public void ordersBtnClick() throws IOException{
+		FXMLLoader loader = provider.getLoader(ORDERS_VIEW_NAME);
+		AnchorPane page = loader.load();
+		rootLayout.setCenter(page);
 	}
 
 }
