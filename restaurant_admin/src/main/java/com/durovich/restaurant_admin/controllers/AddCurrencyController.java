@@ -82,10 +82,15 @@ public class AddCurrencyController implements Initializable {
 		nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 		rateColumn.setCellValueFactory(new PropertyValueFactory<>("rate"));
 		currencies = FXCollections.observableArrayList(service.getAllCurrencies());
+                nameField.textProperty().addListener((observable, oldValue, newValue) -> { 
+nameField.setText(newValue.toUpperCase()); 
+});
 		currencyTable.setItems(currencies);
 		currencyTable.getSelectionModel().selectedItemProperty().addListener(e -> {
 			deleteBTN.setDisable(false);
+                        
 		});
+                
 	}
 
 	private void updateProducts() {

@@ -12,106 +12,117 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="580.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.durovich.restaurant_admin.controllers.MakeOrderController">
+<AnchorPane prefHeight="814.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.durovich.restaurant_admin.controllers.MakeOrderController">
    <children>
-      <ComboBox fx:id="foodPicker" layoutX="65.0" layoutY="31.0" prefWidth="150.0" />
-      <TableView fx:id="positionsTable" layoutX="14.0" layoutY="142.0" prefHeight="200.0" prefWidth="360.0">
+      <ComboBox fx:id="foodPicker" layoutX="47.0" layoutY="68.0" prefWidth="150.0" />
+      <TableView fx:id="positionsTable" layoutX="47.0" layoutY="249.0" prefHeight="336.0" prefWidth="445.0">
         <columns>
-          <TableColumn fx:id="nameColumn" prefWidth="143.0" text="Name" />
-          <TableColumn fx:id="countColumn" prefWidth="77.0" text="Count" />
-            <TableColumn fx:id="perOneColumn" text="Per one" />
-            <TableColumn fx:id="costColumn" minWidth="0.0" prefWidth="59.0" text="Cost" />
+          <TableColumn fx:id="nameColumn" prefWidth="160.0" text="Наименование" />
+          <TableColumn fx:id="countColumn" prefWidth="82.0" text="Количество" />
+            <TableColumn fx:id="perOneColumn" prefWidth="97.0" text="Стоимость за единицу" />
+            <TableColumn fx:id="costColumn" minWidth="0.0" prefWidth="105.0" text="Общая стоимость" />
         </columns>
       </TableView>
-      <Button layoutX="319.0" layoutY="32.0" mnemonicParsing="false" onAction="#addFood" prefHeight="25.0" prefWidth="52.0" text="Add" />
-      <TextField fx:id="foodCount" layoutX="272.0" layoutY="31.0" prefHeight="25.0" prefWidth="43.0" />
-      <Label layoutX="225.0" layoutY="25.0" prefHeight="37.0" prefWidth="52.0" text="Count">
+      <Button layoutX="401.0" layoutY="68.0" mnemonicParsing="false" onAction="#addFood" prefHeight="31.0" prefWidth="114.0" text="Добавить" />
+      <TextField fx:id="foodCount" layoutX="338.0" layoutY="68.0" prefHeight="25.0" prefWidth="43.0" />
+      <Label layoutX="232.0" layoutY="65.0" prefHeight="37.0" prefWidth="95.0" text="Количество">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Label>
-      <Label layoutX="18.0" layoutY="351.0" prefHeight="37.0" prefWidth="95.0" text="Total price:">
+      <Label layoutX="46.0" layoutY="599.0" prefHeight="37.0" prefWidth="168.0" text="Общая стоимость:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Label>
-      <Label fx:id="totalAmount" layoutX="107.0" layoutY="351.0" prefHeight="37.0" prefWidth="52.0" text="0" />
-      <Label layoutX="18.0" layoutY="385.0" prefHeight="37.0" prefWidth="135.0" text="USD, Convert to">
+      <Label fx:id="totalAmount" layoutX="232.0" layoutY="599.0" prefHeight="37.0" prefWidth="43.0" text="0" />
+      <Label layoutX="47.0" layoutY="647.0" prefHeight="37.0" prefWidth="135.0" text="USD, Convert to">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Label>
-      <ComboBox fx:id="paymentTypePicker" layoutX="510.0" layoutY="32.0" prefHeight="25.0" prefWidth="83.0" />
+      <ComboBox fx:id="paymentTypePicker" layoutX="720.0" layoutY="55.0" prefHeight="31.0" prefWidth="114.0" />
       <Label fx:id="convertAmount" layoutX="414.0" layoutY="413.0" prefHeight="37.0" prefWidth="69.0" />
-      <Label layoutX="13.0" layoutY="25.0" prefHeight="37.0" prefWidth="43.0" text="Food">
+      <Label layoutX="47.0" layoutY="33.0" prefHeight="37.0" prefWidth="150.0" text="Основное меню">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Label>
-      <ComboBox fx:id="drinksPicker" layoutX="65.0" layoutY="68.0" prefWidth="150.0" />
-      <Button layoutX="319.0" layoutY="69.0" mnemonicParsing="false" onAction="#addDrinks" prefHeight="25.0" prefWidth="52.0" text="Add" />
-      <TextField fx:id="drinksCount" layoutX="272.0" layoutY="68.0" prefHeight="25.0" prefWidth="43.0" />
-      <Label layoutX="225.0" layoutY="62.0" prefHeight="37.0" prefWidth="52.0" text="Count">
+      <ComboBox fx:id="drinksPicker" layoutX="47.0" layoutY="130.0" prefWidth="150.0" />
+      <Button layoutX="399.0" layoutY="130.0" mnemonicParsing="false" onAction="#addDrinks" prefHeight="31.0" prefWidth="107.0" text="Добавить" />
+      <TextField fx:id="drinksCount" layoutX="338.0" layoutY="130.0" prefHeight="25.0" prefWidth="43.0" />
+      <Label layoutX="234.0" layoutY="127.0" prefHeight="37.0" prefWidth="95.0" text="Количество">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="13.0" layoutY="62.0" prefHeight="37.0" prefWidth="52.0" text="Drinks">
+      <Label layoutX="47.0" layoutY="98.0" prefHeight="37.0" prefWidth="95.0" text="Напитки">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <ComboBox fx:id="barPicker" layoutX="65.0" layoutY="111.0" prefWidth="150.0" />
-      <Button layoutX="319.0" layoutY="112.0" mnemonicParsing="false" onAction="#addBar" prefHeight="25.0" prefWidth="52.0" text="Add" />
-      <TextField fx:id="barCount" layoutX="272.0" layoutY="111.0" prefHeight="25.0" prefWidth="43.0" />
-      <Label layoutX="225.0" layoutY="105.0" prefHeight="37.0" prefWidth="52.0" text="Count">
+      <ComboBox fx:id="barPicker" layoutX="47.0" layoutY="198.0" prefWidth="150.0" />
+      <Button layoutX="399.0" layoutY="198.0" mnemonicParsing="false" onAction="#addBar" prefHeight="31.0" prefWidth="107.0" text="Добавить" />
+      <TextField fx:id="barCount" layoutX="338.0" layoutY="198.0" prefHeight="25.0" prefWidth="43.0" />
+      <Label layoutX="234.0" layoutY="195.0" prefHeight="37.0" prefWidth="101.0" text="Количество">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="23.0" layoutY="105.0" prefHeight="37.0" prefWidth="43.0" text="Bar">
+      <Label layoutX="47.0" layoutY="161.0" prefHeight="37.0" prefWidth="114.0" text="Барное меню">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="380.0" layoutY="26.0" prefHeight="37.0" prefWidth="114.0" text="Payment Type">
+      <Label layoutX="585.0" layoutY="51.0" prefHeight="37.0" prefWidth="135.0" text="Способ оплаты">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="406.0" layoutY="63.0" prefHeight="37.0" prefWidth="69.0" text="Table №">
+      <Label layoutX="584.0" layoutY="98.0" prefHeight="37.0" prefWidth="69.0" text="№ Стола">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="tableNumberField" layoutX="483.0" layoutY="69.0" prefHeight="25.0" prefWidth="43.0" text="1" />
-      <ComboBox fx:id="exchangePicker" layoutX="153.0" layoutY="391.0" prefHeight="25.0" prefWidth="83.0" />
-      <Button layoutX="210.0" layoutY="498.0" mnemonicParsing="false" onAction="#makeOrder" prefHeight="25.0" prefWidth="135.0" text="Make order">
+      <TextField fx:id="tableNumberField" layoutX="720.0" layoutY="101.0" prefHeight="25.0" prefWidth="43.0" text="1" />
+      <ComboBox fx:id="exchangePicker" layoutX="187.0" layoutY="650.0" prefHeight="31.0" prefWidth="107.0" />
+      <Button layoutX="364.0" layoutY="707.0" mnemonicParsing="false" onAction="#makeOrder" prefHeight="25.0" prefWidth="135.0" text="Сделать заказ">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="443.0" layoutY="498.0" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="135.0" text="Reset">
+      <Button layoutX="668.0" layoutY="707.0" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="135.0" text="Reset">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Label fx:id="convertedPrice" layoutX="246.0" layoutY="385.0" prefHeight="37.0" prefWidth="52.0" text="0" />
-      <TabPane layoutX="383.0" layoutY="105.0" prefHeight="350.0" prefWidth="250.0" tabClosingPolicy="UNAVAILABLE">
+      <Label fx:id="convertedPrice" layoutX="312.0" layoutY="647.0" prefHeight="37.0" prefWidth="52.0" text="0" />
+      <TabPane layoutX="610.0" layoutY="164.0" prefHeight="431.0" prefWidth="250.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="bill">
+          <Tab text="Счет">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextArea fx:id="billArea" editable="false" minHeight="300.0" minWidth="200.0" prefHeight="322.0" prefWidth="250.0" wrapText="true" />
+                        <TextArea fx:id="billArea" editable="false" minHeight="300.0" minWidth="200.0" prefHeight="396.0" prefWidth="250.0" wrapText="true" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="calculator">
+          <Tab text="Калькулятор">
             <content>
               <fx:include fx:id="fooTabPage" source="calculator.fxml" />
             </content>
           </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="printBtn" disable="true" layoutX="443.0" layoutY="455.0" mnemonicParsing="false" onAction="#print" prefHeight="25.0" prefWidth="135.0" text="Print">
+      <Button fx:id="printBtn" disable="true" layoutX="668.0" layoutY="599.0" mnemonicParsing="false" onAction="#print" prefHeight="25.0" prefWidth="135.0" text="Печать">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="300.0" layoutY="603.0" prefHeight="37.0" prefWidth="121.0" text="Ввести скидку">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="discount" layoutX="421.0" layoutY="609.0" prefHeight="25.0" prefWidth="69.0" text="0" />
+      <Button layoutX="506.0" layoutY="259.0" mnemonicParsing="false" onAction="#deletePosition" prefHeight="129.0" prefWidth="95.0" text="Удалить позицию" wrapText="true">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

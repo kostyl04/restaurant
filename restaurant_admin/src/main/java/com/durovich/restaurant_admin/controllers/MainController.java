@@ -94,7 +94,8 @@ public class MainController {
 	public void logout() throws IOException {
 		menu.setDisable(true);
 		rootLayout.setCenter(loginPane);
-
+username.clear(); 
+password.clear();
 	}
 	@FXML
 	public void ordersBtnClick() throws IOException{

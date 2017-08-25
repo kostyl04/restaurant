@@ -46,9 +46,9 @@ public class DBconfig {
 	public DataSource getDataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/demo_restaurant?serverTimezone=UTC");
-		dataSource.setUsername("demo");
-		dataSource.setPassword("demo");
+		dataSource.setUrl("jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11191284?serverTimezone=UTC");
+		dataSource.setUsername("sql11191284");
+		dataSource.setPassword("aUSstb5Lss");
 
 		return dataSource;
 	}

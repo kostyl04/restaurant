@@ -7,8 +7,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
+@Entity()
+@Table(name="product")
 public class Product {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -17,6 +19,17 @@ public class Product {
 	private String name;
 	@Column
 	private Double cost;
+	@Column
+	private boolean enabled;
+	
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
 	@Enumerated(EnumType.STRING)
 	private ProductType productType;
 

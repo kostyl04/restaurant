@@ -11,10 +11,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
+import javax.persistence.Table;
 
-@Entity(name = "order_table")
+@Entity()
+@Table(name = "order_table")
 public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

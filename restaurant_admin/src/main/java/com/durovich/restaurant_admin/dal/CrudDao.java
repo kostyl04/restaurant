@@ -3,6 +3,8 @@ package com.durovich.restaurant_admin.dal;
 import java.io.Serializable;
 import java.util.List;
 
+import com.durovich.restaurant_admin.entity.Product;
+
 public interface CrudDao {
 
 	/**
@@ -46,4 +48,6 @@ public interface CrudDao {
 	 * @return
 	 */
 	<T> List<T> list(Class<T> type);
+
+	
 	}

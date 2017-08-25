@@ -6,21 +6,28 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.durovich.restaurant_admin.controllers.OrdersController">
+<AnchorPane prefHeight="814.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.durovich.restaurant_admin.controllers.OrdersController">
    <children>
-      <TableView fx:id="orderTable" layoutX="14.0" layoutY="39.0" prefHeight="395.0" prefWidth="459.0">
+      <TableView fx:id="orderTable" layoutX="88.0" layoutY="251.0" prefHeight="502.0" prefWidth="730.0">
         <columns>
-          <TableColumn fx:id="orderNumberColumn" prefWidth="61.0" text="Order №" />
-          <TableColumn fx:id="tableNumberColumn" minWidth="0.0" prefWidth="150.0" text="Table №" />
-            <TableColumn fx:id="timeColumn" minWidth="0.0" prefWidth="125.0" text="Time" />
-            <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="122.0" text="Status" />
+          <TableColumn fx:id="orderNumberColumn" prefWidth="162.0" text="№ Заказа" />
+          <TableColumn fx:id="tableNumberColumn" minWidth="0.0" prefWidth="112.0" text="№ Стола" />
+            <TableColumn fx:id="timeColumn" minWidth="0.0" prefWidth="219.0" text="Время" />
+            <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="236.0" text="Статус" />
         </columns>
       </TableView>
-      <Button fx:id="updateBTN" disable="true" layoutX="493.0" layoutY="205.0" mnemonicParsing="false" onAction="#updateStatus" prefHeight="50.0" prefWidth="102.0" text="UpdateStatus" />
-      <ComboBox fx:id="statusBox" layoutX="476.0" layoutY="160.0" prefHeight="38.0" prefWidth="150.0" />
-      <Label layoutX="489.0" layoutY="136.0" prefHeight="17.0" prefWidth="125.0" text="Select status:" />
-      <Label layoutX="489.0" layoutY="39.0" prefHeight="38.0" prefWidth="140.0" text="Show orders with status:" />
-      <ComboBox fx:id="filterBox" layoutX="476.0" layoutY="83.0" prefHeight="38.0" prefWidth="150.0" />
+      <Button fx:id="updateBTN" disable="true" layoutX="668.0" layoutY="166.0" mnemonicParsing="false" onAction="#updateStatus" prefHeight="38.0" prefWidth="150.0" text="Изменить статус" />
+      <ComboBox fx:id="statusBox" layoutX="228.0" layoutY="165.0" prefHeight="38.0" prefWidth="150.0" />
+      <Label layoutX="88.0" layoutY="172.0" prefHeight="17.0" prefWidth="125.0" text="Выбрать статус">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="88.0" layoutY="90.0" prefHeight="38.0" prefWidth="140.0" text="Выбрать заказ">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <ComboBox fx:id="filterBox" layoutX="228.0" layoutY="90.0" prefHeight="38.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

@@ -83,6 +83,8 @@ public class MakeOrderController implements Initializable {
 	@FXML
 	private TextField drinksCount;
 	@FXML
+	private TextField discount;
+	@FXML
 	private Label totalAmount;
 	@FXML
 	private ComboBox<CurrencyExchange> exchangePicker;
@@ -104,7 +106,7 @@ public class MakeOrderController implements Initializable {
 		perOneColumn.setCellValueFactory(new PropertyValueFactory<>("costPerOne"));
 		positions = FXCollections.observableArrayList(new ArrayList<OrderPosition>());
 		positionsTable.setItems(positions);
-		products = productService.getAllProducts();
+		products = productService.getAllEnableProducts();
 		foodPicker.setItems(FXCollections.observableArrayList(products.stream()
 				.filter(p -> p.getProductType().equals(ProductType.Food)).collect(Collectors.toList())));
 		drinksPicker.setItems(FXCollections.observableArrayList(products.stream()
@@ -145,7 +147,22 @@ public class MakeOrderController implements Initializable {
 					printBtn.setDisable(false);
 			}
 		});
+		discount.textProperty().addListener(new ChangeListener<String>() {
 
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				if(newValue.isEmpty())
+					newValue="0";
+				else try{
+					double d=Double.valueOf(newValue);
+				}catch(Exception e){
+					newValue=oldValue;
+				}
+				discount.setText(newValue);
+				updateInfo();
+			}
+
+		});
 	}
 
 	@FXML
@@ -193,7 +210,9 @@ public class MakeOrderController implements Initializable {
 		for (OrderPosition o : positions) {
 			summ += o.getCost();
 		}
-		totalAmount.setText(String.valueOf(summ));
+		summ -= Double.valueOf(discount.textProperty().get());
+		summ=summ<0?0:summ;
+		totalAmount.setText(String.valueOf(summ));//
 	}
 
 	@FXML
@@ -222,6 +241,14 @@ public class MakeOrderController implements Initializable {
 		paymentTypePicker.getSelectionModel().select(0);
 		totalAmount.setText("0");
 		billArea.clear();
+		discount.setText("0");
+	}
+	@FXML
+	public void deletePosition(){
+		List <OrderPosition> list=positionsTable.getSelectionModel().getSelectedItems();
+		positions.removeAll(list);
+		updateInfo();
+		
 	}
 
 	@FXML
