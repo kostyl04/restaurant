@@ -1,7 +1,10 @@
 package com.durovich.restaurant_admin.controllers;
 
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -30,6 +33,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
+import javafx.util.StringConverter;
 
 @Component
 public class AddProductController implements Initializable {
@@ -146,7 +150,25 @@ public class AddProductController implements Initializable {
 			deleteBTN.setDisable(false);
 			
 		});
+		
 		productTypeField.setItems(FXCollections.observableArrayList(ProductType.values()));
+		productTypeField.setConverter(new StringConverter<ProductType>(){
+
+			@Override
+			public String toString(ProductType p) {
+				
+				return p.getName();
+			}
+
+			@Override
+			public ProductType fromString(String name) {
+				
+				return ProductType.get(name);
+			}
+
+			
+			
+		});
 		productTypeField.getSelectionModel().selectFirst();
 		searchField.textProperty().addListener((observable, oldValue, newValue) -> {
 			products.setPredicate(myObject -> {
